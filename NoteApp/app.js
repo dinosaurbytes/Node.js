@@ -26,18 +26,29 @@ const notes = require('./notes.js');
 
 //Using third party modules lodash
 const _ = require('lodash');
+const yargs = require('yargs');
 // console.log(_.isString(true));
 // console.log(_.isString('Brian'));
 //
 // var filteredArray = _.uniq(['Mike']);
 // console.log(filteredArray);
 
+const argv = yargs.argv;
+
 var command = process.argv[2];
+
 console.log('Command: ', command);
+console.log('Process', process.argv);
+console.log('Yargs', argv);
+
 if (command === 'add'){
   console.log('Adding new note');
 } else if (command === 'list'){
   console.log('Listing all notes');
+} else if (command === 'read'){
+  console.log('Fetching note');
+} else if (command === 'remove'){
+  console.log('Note removed');
 } else{
   console.log('Command not recoganized');
 }
